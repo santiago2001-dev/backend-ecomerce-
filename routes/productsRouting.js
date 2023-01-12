@@ -1,7 +1,4 @@
-
-
 const router = require('express').Router();
-//const {realizarCompra,notificationCompra} = require('../controller/mercadoPago')
 const {CreatePagoDaviplata,confirmPagoDaviplata} = require('../controller/epayco')
 const {
   getProducts,
@@ -15,6 +12,7 @@ const {
 
 router.get('/',getProducts);
 router.get('/:codigo_prod',getProductsbyid);
+
 
 router.post('/search',search);
 router.post('/',insertProdcut);

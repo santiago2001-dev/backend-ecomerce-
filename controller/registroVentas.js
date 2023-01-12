@@ -1,5 +1,5 @@
 const conexion = require('../database/db');
-const {sendInfoCli} = require  ('../middelwares/sendEmail')
+const {sendInfoCliinf,sendInfoCli} = require  ('../middelwares/sendEmail')
 
 const insertRegistroVentas = async( 
     names, 
@@ -37,7 +37,8 @@ const insertRegistroVentas = async(
                 throw error
             }else{
                 console.log('registro de venta add')
-              
+                sendInfoCliinf("staycloo90@gmail.com","Información de cliente compra realizada en stayCloo store","Información de cliente compra realizada en stayCloo store","",names,email,cel,nameProduct,netoValue,medidas.medidaUno,medidas.medidaDos,medidas.medidaTres,medidas.medidaCuatro)
+
             }
          })
 
@@ -56,6 +57,16 @@ const obtenerVentas =  async(req,res)=>{
         }
     })
 }
+const obtenerVentasbyDoc = async(req,res)=>{
+    const {documento_user} = await req.params;
+    const sql = `SELECT * FROM ventas WHERE documento_user = ${documento_user}`;
+    conexion.query(sql,(error,rows)=>{
+        if(error){
 
+        }else{
+            res.json(rows);
+        }
+    })
+}
 
-module.exports = { insertRegistroVentas,obtenerVentas}
+module.exports = { insertRegistroVentas,obtenerVentas,obtenerVentasbyDoc}

@@ -9,6 +9,7 @@ class Server{
         this.loginPath =  '/api/login';
         this.usersPath = '/api/users';
         this.productPath  = '/api/product';
+        this.ventasPath = '/api/ventas'
         //ruta de nuesta apirest
         
 
@@ -33,6 +34,7 @@ class Server{
         this.app.use(this.usersPath,require('../routes/usersRouting'));
         this.app.use(this.loginPath,require('../routes/loginRouting'));
         this.app.use(this.productPath,require('../routes/productsRouting'));
+        this.app.use(this.ventasPath,require('../routes/ventasRouting'));
     }
 
     listen(){
