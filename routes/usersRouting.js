@@ -17,7 +17,13 @@ router.get('/',getUsers);
 router.get('/:id',getUserbyd);
 
 
-router.post('/cliente',CreateUserClient);
+router.post('/cliente',
+check('email','debe proporcionar un email valido').isEmail(),
+ValidarPass,
+existeMailTrue,
+validarCmapos,
+CreateUserClient);
+
 router.post('/',
 check('email','debe proporcionar un email valido').isEmail(),
 ValidarPass,
