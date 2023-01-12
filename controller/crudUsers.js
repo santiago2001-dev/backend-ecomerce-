@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 const conexion = require('../database/db');
 const {encript} = require('../middelwares/encriptPass');
-const {sendEmail} = require('../middelwares/sendEmail')
+const {sendEmailRegistro} = require('../middelwares/sendEmail')
 
  const CreateUserClient = async(req,res)=>{
    
@@ -15,7 +15,7 @@ const {sendEmail} = require('../middelwares/sendEmail')
             res.json("usuario creado de fomra correcta");
         }
     })
-    sendEmail(email,'cuenta creada','creacion de cuenta','Bienvenido a staycloo store ya puedes comprar !!','https://www.google.com/');
+    sendEmailRegistro(email,'cuenta creada','creacion de cuenta',names,'https://www.google.com/');
 
 
  }
@@ -65,7 +65,7 @@ const getUserbyd =  async(req,res)=>{
             res.json('usuario agregado de forma correcta');
         }
     })
-    sendEmail(email,'cuenta creada','creacion de cuenta','Bienvenido a staycloo store ya puedes comprar !!','https://www.google.com/');
+    sendEmailRegistro(email,'cuenta creada','creacion de cuenta',names,'https://www.google.com/');
 
 
 
