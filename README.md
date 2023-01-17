@@ -5,7 +5,7 @@
 -  json web token para la autenticación 
 - mysql como base de datos
 - carga del imágenes con cloundinary 
-- Envió de correos electrónicos con no demoler
+- Envió de correos electrónicos con nodemailer
 
 
 
