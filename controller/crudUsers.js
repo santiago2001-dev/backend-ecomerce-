@@ -24,7 +24,7 @@ const {sendEmailRegistro} = require('../middelwares/sendEmail')
 
 
 const getUsers= (req,res)=>{
-    const sql = 'SELECT * from users';
+    const sql = 'SELECT * from users order id desc';
     
     
     conexion.query(  sql,(error,results)=>{

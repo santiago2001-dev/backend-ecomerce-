@@ -49,7 +49,7 @@ const insertRegistroVentas = async(
 
 
 const obtenerVentas =  async(req,res)=>{
-    conexion.query("select * from ventas",(error,rows)=>{
+    conexion.query("select * from ventas order by id desc",(error,rows)=>{
         if(error){
             throw error
         }else{
