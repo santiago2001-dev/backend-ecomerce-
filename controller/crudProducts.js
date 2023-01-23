@@ -22,7 +22,7 @@ const search = async(req,res) =>{
 }
 //get all products
 const  getProducts =async(req,res)=>{
-    const sql = 'SELECT * from productos';
+    const sql = 'SELECT * from productos order by codigo_prod desc' ;
       conexion.query(sql,(error,rows,fields,results)=>{
           if(error){
               throw error;
