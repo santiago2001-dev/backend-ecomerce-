@@ -8,7 +8,7 @@ const bcrypt = require('bcryptjs');
 const auth = async(req,res)=>{
     let {email,pass} = await req.body;
     let Pass;
-    const sql = `SELECT pass ,email,typeUser FROM users WHERE email = '${email}'`;
+    const sql = `SELECT names,pass ,email,typeUser FROM users WHERE email = '${email}'`;
     if(email == undefined){
         res.json('ingresa los campos ');
     }else{

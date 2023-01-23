@@ -85,7 +85,7 @@ const updateProducts =  async(req,res)=>{
     let anio = date.toString().substring(11,16)
 
     let fecha = `${dia}/${mes}/${anio}`
-    let sql =  `update productos set titulo ='${titulo}',fecha = '${fecha}',precio = ${precio}, tipo = '${tipo}',  sinopsis = '${sinopsis}', 
+    let sql =  `update productos set titulo ='${titulo}',fecha = '${fecha}',precio = ${precio}, tipo = '${tipo}',  sinopsis = '${sinopsis}'
      where codigo_prod = ${codigo_prod}`
      await conexion.query(sql, (error, results) => {
         if (error) { 
