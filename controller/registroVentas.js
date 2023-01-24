@@ -68,5 +68,24 @@ const obtenerVentasbyDoc = async(req,res)=>{
         }
     })
 }
+    const obtenerVentasSup =  async(req,res)=>{
+        conexion.query("select * from ventas where tipoProduct = 'superior' order by id desc",(error,rows)=>{
+            if(error){
+                throw error
+            }else{
+                res.json(rows)
+            }
+        })
+    }
+    const obtenerVentasInf =  async(req,res)=>{
+        conexion.query("select * from ventas where tipoProduct = 'inferior' order by id desc",(error,rows)=>{
+            if(error){
+                throw error
+            }else{
+                res.json(rows)
+            }
+        })
+    }
 
-module.exports = { insertRegistroVentas,obtenerVentas,obtenerVentasbyDoc}
+
+module.exports = { insertRegistroVentas,obtenerVentas,obtenerVentasbyDoc,obtenerVentasSup,obtenerVentasInf}
