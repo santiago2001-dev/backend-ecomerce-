@@ -1,7 +1,7 @@
 const conexion = require('../database/db');
 const {epayco} = require('../middelwares/epayco');
 const { sendEmail,sendInfoCli } = require('../middelwares/sendEmail');
-const {insertRegistroVentas} = require('../controller/registroVentas')
+const {insertRegistroVentas} = require('./registroventas')
 
 var ref_payco
 var  id_session_token

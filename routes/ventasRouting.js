@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {obtenerVentas,obtenerVentasbyDoc,obtenerVentasInf,obtenerVentasSup} = require('../controller/registroVentas')
+const {obtenerVentas,obtenerVentasbyDoc,obtenerVentasInf,obtenerVentasSup} = require('../controller/registroventas')
 router.get('/',obtenerVentas);
 router.get('/sup',obtenerVentasSup);
 router.get('/inf',obtenerVentasInf);

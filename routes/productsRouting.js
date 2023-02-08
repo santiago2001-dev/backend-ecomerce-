@@ -7,7 +7,7 @@ const {
   insertProdcut,
   updateProducts,
   deleteProduct
-} = require('../controller/crudProducts')
+} = require('../controller/crudproducts')
 
 
 router.get('/',getProducts);

@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const {check} = require('express-validator');
-const {validarCmapos} = require('../middelwares/validacionesExpress');
-const {ValidarPass,existeMailTrue,existeMaiFalse} = require('../middelwares/validacionPersonali');
+const {validarCmapos} = require('../middelwares/validacionesexpress');
+const {ValidarPass,existeMailTrue,existeMaiFalse} = require('../middelwares/validacionpersonali');
 
 const {
     CreateUserClient,
@@ -9,7 +9,7 @@ const {
     getUsers,
     insertUser,
     updateuser,
-    deleteUser} = require('../controller/crudUsers');
+    deleteUser} = require('../controller/crudusers');
 
 const router = Router();
 

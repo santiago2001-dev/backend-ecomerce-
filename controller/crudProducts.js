@@ -1,6 +1,6 @@
 
 const conexion = require('../database/db');
-const {imgHost} = require('../middelwares/hostImg');
+const {imgHost} = require('../middelwares/hostimg');
 
 
 //nav bar
