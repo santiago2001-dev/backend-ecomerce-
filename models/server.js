@@ -31,10 +31,10 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.usersPath,require('../routes/usersrouting'));
-        this.app.use(this.loginPath,require('../routes/loginrouting'));
-        this.app.use(this.productPath,require('../routes/productsrouting'));
-        this.app.use(this.ventasPath,require('../routes/ventasrouting'));
+        this.app.use(this.usersPath,require('../routes/usersRouting.js '));
+        this.app.use(this.loginPath,require('../routes/loginRouting'));
+        this.app.use(this.productPath,require('../routes/productsRouting'));
+        this.app.use(this.ventasPath,require('../routes/ventasRouting'));
     }
 
     listen(){
