@@ -7,7 +7,7 @@ class Server{
         this.app = express();
         this.port = process.env.PORT || 3000;
         this.loginPath =  '/api/login';
-        this.usersPath = '/api/users';
+        this.usersPath = '/';
         this.productPath  = '/api/product';
         this.ventasPath = '/api/ventas'
         //ruta de nuesta apirest
