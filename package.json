@@ -2,12 +2,10 @@
   "engines": {
     "node": "18.14.0"
   },
-  
   "name": "backend-ecomerce",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  
   "scripts": {
     "start": "node index.js"
   },
@@ -21,6 +19,7 @@
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.29.1",
     "cors": "^2.8.5",
+    "debug": "^4.3.4",
     "dotenv": "^16.0.1",
     "epayco-sdk-node": "^1.2.0",
     "express": "^4.17.3",
