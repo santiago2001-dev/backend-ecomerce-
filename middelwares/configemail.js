@@ -6,8 +6,8 @@ const nodemailer = require('nodemailer');
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: process.env.userGoogle, // generated ethereal user
-    pass: process.env.passGoogle // generated ethereal password
+    user: 'staycloo90@gmail.com', // generated ethereal user
+    pass: 'doixieccshbgbssb' // generated ethereal password
   },
 }); 
 transporter.verify().then(()=>{
