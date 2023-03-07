@@ -10,6 +10,7 @@ class Server{
         this.usersPath = '/api/users';
         this.productPath  = '/api/product';
         this.ventasPath = '/api/ventas'
+        this.psePath = '/api/pse'
         //ruta de nuesta apirest
         
 
@@ -35,12 +36,14 @@ class Server{
         this.app.use(this.loginPath,require('../routes/loginRouting'));
         this.app.use(this.productPath,require('../routes/productsRouting'));
         this.app.use(this.ventasPath,require('../routes/ventasRouting'));
+        this.app.use(this.psePath,require('../routes/pseRouting'));
     }
 
     listen(){
         this.app.listen(this.port,()=>{
             console.log(`servidor corriendo en :${this.port}`)
 
+            
         })
 
     }

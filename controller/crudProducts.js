@@ -6,8 +6,7 @@ const {imgHost} = require('../middelwares/hostImg');
 //nav bar
 const search = async(req,res) =>{
     const {busqueda} = req.body
-    console.log(req.body)
-    const sql = `SELECT * FROM productos WHERE  codigo_prod = '${busqueda}' OR titulo = '${busqueda}' OR fecha = '${busqueda}'OR tipo = '${busqueda}}'   OR sinopsis = '${busqueda}'`
+        const sql = `SELECT * FROM productos WHERE  codigo_prod = '${busqueda}' OR titulo = '${busqueda}' OR fecha = '${busqueda}'OR tipo = '${busqueda}}'   OR sinopsis = '${busqueda}' OR genero='${busqueda}'` 
       conexion.query(sql, (error,rows,fields) => {
   
         if(error){
@@ -20,6 +19,23 @@ const search = async(req,res) =>{
     }
     )
 }
+const categoria = async(req,res) =>{
+    const {busqueda} = req.body
+    console.log(busqueda)
+        const sql = `SELECT * FROM productos WHERE  genero = '${busqueda}' ` 
+      conexion.query(sql, (error,rows,fields) => {
+  
+        if(error){
+            throw error;
+           
+       }else{
+           res.json(rows);
+           
+       }
+    }
+    )
+}
+
 //get all products
 const  getProducts =async(req,res)=>{
     const sql = 'SELECT * from productos order by codigo_prod desc' ;
@@ -50,7 +66,7 @@ const getProductsbyid =  async(req,res)=>{
 }
 //insert product
 const insertProdcut = async(req,res)=>{
-    const {titulo ,precio,tipo,sinopsis, imagenUno,imagenDos,imagenTres} = req.body
+    const {titulo ,precio,tipo,sinopsis,genero, imagenUno,imagenDos,imagenTres} = req.body
 
    const imagenuno =  await imgHost(imagenUno);
    const imagendos =  await imgHost(imagenDos);
@@ -60,8 +76,8 @@ const insertProdcut = async(req,res)=>{
    let mes = date.toString().substring(4,7)
    let anio = date.toString().substring(11,16)
 
-   let fecha = `${dia}/${mes}/${anio}`
-   let sql =`INSERT INTO productos (titulo,fecha,precio,tipo,sinopsis ,imagenUno,imagenDos,imagenTres) values ('${titulo}','${fecha}',${precio},'${tipo}','${sinopsis}','${imagenuno}','${imagendos}','${imagentres}')`
+      let fecha = `${dia}/${mes}/${anio}`
+   let sql =`INSERT INTO productos (titulo,fecha,precio,tipo,sinopsis ,genero,imagenUno,imagenDos,imagenTres) values ('${titulo}','${fecha}',${precio},'${tipo}','${sinopsis}','${genero}','${imagenuno}','${imagendos}','${imagentres}')`
    
    conexion.query(sql,(error,rows,fields)=>{
        if(error){
@@ -121,7 +137,8 @@ module.exports = {
     getProductsbyid,
     insertProdcut,
     updateProducts,
-    deleteProduct
+    deleteProduct,
+    categoria
 
 
 }
