@@ -27,7 +27,7 @@ epayco.daviplata.create(info.infoPago)
     .then(function(daviplata){
         
         res.json(daviplata)
-       if(daviplata.success == false){
+       if(daviplata.success == true){
         ref_payco =   daviplata.data.refPayco // It is obtained from the create response
         id_session_token =daviplata.data.idSessionToken
         emailCliente = daviplata.data.email
@@ -63,7 +63,7 @@ const confirmPagoDaviplata= async(req,res)=>{
     }).then(function(daviplata){
              res.json(daviplata)
 
-             if(daviplata.success == false){
+             if(daviplata.success == true){
 
                 conexion.query(sql,(error,rows)=>{
                     if(error){
